@@ -1,0 +1,14 @@
+Summary of customer name, id, geographic info and paid amount
+SELECT A.customer_id,  A.first_name AS customer_first_name,
+A.last_name AS customer_last_name, C.city, D.country,
+SUM(amount) AS Total_amount_paid
+FROM payment E
+INNER JOIN customer A ON E.customer_id + A.customer_id
+INNER JOIN address B ON A.address_id = B.address_id
+INNER JOIN city C ON B.city_id = C.city_id
+INNER JOIN country D ON C.country_id = D.country_id
+WHERE city IN ("Saint_Denis', 'Cape Coral', 'Santa Brbara dOeste',
+Appledorn', 'Molodetno', 'Qomsheh', 'London', 'Memphis', 'Richmond Hill',
+Tanza')
+GROUP BY A.customer_id, A.first_name, A.last_name, C.city, D.country
+ORDER BY SUM(amount) DESC
