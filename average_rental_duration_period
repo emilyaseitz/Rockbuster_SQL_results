@@ -1,1 +1,7 @@
-
+Metrics for rental duraiton -all films
+SELECT MIN(rental_duration) AS min_rental_duration,
+MAX(rental_duration) AS max_rental_duration,
+AVG(rental_duration) AS avg_rental_duration,
+COUNT(rental_duration) AS count_rentals,
+COUNT(*) AS rows
+FROM film;
