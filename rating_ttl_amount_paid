@@ -1,0 +1,10 @@
+Summary by film rating total amount paid
+SELECT A.name AS genre, sum(amount) AS total_revenue
+FROM category A
+INNER JOIN film_category B ON A.category.id = B.category_id
+INNER JOIN film C ON B.film.id = C.film_id
+INNER JOIN inventory D ON C.film_id = D.film_id
+INNER JOIN rental E ON D.inventory_id = E.inventory_id
+INNER JOIN payment F ON E.rental_id = F.rental_id
+ORDER BY A.name
+ORDER BY sum(amount) DESC
