@@ -1,0 +1,4 @@
+summary movie length by all films by rating
+SELECT rating, AVG(length)
+FROM film
+GROUP BY rating
