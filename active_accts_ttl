@@ -1,0 +1,5 @@
+Summary of counts of active/inactive accounts
+SELECT (active), COUNT(*)
+FROM customer
+GROUP BY active
+ORDER BY COUNT(*)
