@@ -1,0 +1,15 @@
+Summary of top 10 countries revenue by genre
+SELECT A.name AS genre, I.country, SUM(E.amount) AS total_amount_paid
+FROM category A
+INNER JOIN film_category B ON A.category_id = B.category_id
+INNER JOIN inventory C ON B.film_id = C.film_id
+INNER JOIN rental D ON C.inventory_id = D.inventory_id
+INNER JOIN payment E ON D.rental_id = E.rental_id
+INNER JOIN customer F ON E.customer_id = F.customer_id
+INNER JOIN address G ON F.address_id = G.address_id
+INNER JOIN city H ON G.city_id = H.city_id
+INNER JOIN country I ON H.country_id = I.country_id
+WHERE COUNTRY IN('India','China','United States','Japan', 'Mexico', 'Brazil',
+Russian Federation', 'Philippines', 'Turkey', 'Indonesia')
+GROUP BY A.name, I.country
+ORDER BY SUM(amount) DESC
