@@ -1,0 +1,4 @@
+The average cost to replace films by rating
+SELECT rating, AVG(replacement_cost)
+FROM film
+GROUP BY rating
