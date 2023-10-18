@@ -1,0 +1,7 @@
+Average rental duration of films by genre
+SELECT C.name AS genre, AVG(rental_duration) AS avg_rental_duration
+FROM film A
+INNER JOIN film_category B ON A film_id = B.film_id
+INNER JOIN category C ON B category_id = B.category_id
+GROUP BY C.name
+ORDER BY AVG(rental_duration) DESC
