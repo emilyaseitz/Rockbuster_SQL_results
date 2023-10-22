@@ -1,5 +1,5 @@
 # Rockbuster LLC
-![stock art imagery]()  
+
 <img src="https://media.istockphoto.com/id/584570368/photo/father-and-daughter-day.jpg?s=2048x2048&w=is&k=20&c=QW-mPPjZR5q9lqP1bhINWbRumh5QXiZr5CN6VYQderc=" width="1000" height="300">
 
 ## Objective
